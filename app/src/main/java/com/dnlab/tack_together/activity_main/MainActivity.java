@@ -1,4 +1,4 @@
-package com.dnlab.tack_together.activity;
+package com.dnlab.tack_together.activity_main;
 
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.appcompat.app.AppCompatActivity;

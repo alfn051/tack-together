@@ -11,21 +11,21 @@ import ua.naiksoftware.stomp.Stomp;
 import ua.naiksoftware.stomp.StompClient;
 import ua.naiksoftware.stomp.dto.StompHeader;
 
-public class StompService {
+public class StompClientSingleton {
 
     private static final String TAG = "[StompService]";
 
     private static final String STOMP_URL = "ws://192.168.64.51:8082/match?token=";
     private static final String TOKEN_TEMP = "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdG9tcCIsImlhdCI6MTY4MzcxODMzMywiZXhwIjoxNjg0OTI3OTMzLCJhdXRoIjoiUk9MRV9NRU1CRVIifQ._jFzZkAAigA0cSr6euukw21meCWeiFbYvVtK70cAjPVUsYA9Pswam4KpjjvHZ5UO";
 
-    private static StompService instance = null;
+    private static StompClientSingleton instance = null;
     private static StompClient stompClient;
 
     private static List<StompHeader> headerList;
 
-    public static StompService getInstance(Context context){
+    public static StompClientSingleton getInstance(Context context){
         if(instance == null){
-            instance = new StompService();
+            instance = new StompClientSingleton();
             initStompClient(context);
         }
         return instance;

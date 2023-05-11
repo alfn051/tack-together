@@ -1,25 +1,16 @@
-package com.dnlab.tack_together.activity;
+package com.dnlab.tack_together.activity_main;
 
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.widget.Button;
 import android.widget.EditText;
 
-import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.dnlab.tack_together.R;
 import com.dnlab.tack_together.retrofit.RetrofitAPI;
 import com.dnlab.tack_together.api.dto.request.RequestLogin;
-import com.dnlab.tack_together.api.dto.response.ResponseLogin;
-
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
 
 public class LoginActivity extends AppCompatActivity {
     private EditText usernameEditText;

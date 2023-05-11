@@ -1,4 +1,4 @@
-package com.dnlab.tack_together.activity;
+package com.dnlab.tack_together.activity_main;
 
 import android.content.Intent;
 import android.os.Bundle;

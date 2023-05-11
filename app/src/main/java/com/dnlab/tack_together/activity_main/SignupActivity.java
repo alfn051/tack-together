@@ -1,29 +1,15 @@
-package com.dnlab.tack_together.activity;
+package com.dnlab.tack_together.activity_main;
 
-import android.content.DialogInterface;
 import android.os.Bundle;
-import android.util.Log;
 import android.widget.Button;
 import android.widget.EditText;
 
-import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.dnlab.tack_together.R;
 import com.dnlab.tack_together.retrofit.RetrofitAPI;
-import com.dnlab.tack_together.api.dto.request.RequestRegistration;
-import com.dnlab.tack_together.api.dto.response.ResponseRegistration;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParser;
-
-import java.io.IOException;
-
-import okhttp3.ResponseBody;
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
 
 public class SignupActivity extends AppCompatActivity {
     private EditText nameEditText;
