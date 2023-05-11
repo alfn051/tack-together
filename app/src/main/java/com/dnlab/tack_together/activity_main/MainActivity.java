@@ -1,28 +1,18 @@
 package com.dnlab.tack_together.activity;
 
-import androidx.activity.result.ActivityResult;
-import androidx.activity.result.ActivityResultCallback;
 import androidx.activity.result.ActivityResultLauncher;
-import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
-import android.content.pm.PackageInfo;
-import android.content.pm.PackageManager;
-import android.content.pm.Signature;
 import android.os.Bundle;
-import android.util.Base64;
-import android.util.Log;
 import android.widget.Button;
 
-import com.dnlab.tack_together.BuildConfig;
 import com.dnlab.tack_together.R;
-
-import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
+import com.dnlab.tack_together.retrofit.RetrofitBuilder;
+import com.dnlab.tack_together.service.StompClientSingleton;
 
 import retrofit2.Retrofit;
-import retrofit2.converter.gson.GsonConverterFactory;
+import ua.naiksoftware.stomp.StompClient;
 
 public class MainActivity extends AppCompatActivity {
     public static String TAG = "[" + MainActivity.class.getSimpleName() + "] ";
@@ -37,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
     private String accessToken = null;
     private String refreshToken = null;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,11 +36,20 @@ public class MainActivity extends AppCompatActivity {
 
 //        instance = this;
 //        getHashKey();
+
+        retrofit = RetrofitBuilder.getInstance().getRetrofit();
+
+
+        //임시 stomp 테스트
+        StompClient stompClient = StompClientSingleton.getInstance(getApplicationContext()).getStompClient();
+//        stompClient.send("send할 주소", jsonObject.toJSONString()).subscribe();
 //
-        retrofit = new Retrofit.Builder()
-                .baseUrl(BuildConfig.API_BASE_URL)
-                .addConverterFactory(GsonConverterFactory.create())
-                .build();
+//
+//
+//        stompClient.topic("subscribe할 주소").subscribe(topicMessage -> {
+//                    JSONParser parser=new JSONParser();
+//                    Object obj=parser.parse(topicMessage.getPayload());
+
 //
 //        signupButton = findViewById(R.id.signupButton);
 //        signupButton.setOnClickListener(v -> {
